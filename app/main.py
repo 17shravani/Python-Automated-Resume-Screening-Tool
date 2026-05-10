@@ -14,7 +14,7 @@ from src.parser import ResumeParser
 from src.extractor import EntityExtractor
 from src.scorer import TalentScorer
 
-app = FastAPI(title="TalentFlow AI API")
+app = FastAPI(title="NexusTalent Quantum AI API")
 db_path = "db/talent.db"
 
 # Initialize DB
@@ -72,7 +72,6 @@ async def screen_resume(job_id: str, candidate_name: str = Form(...), file: Uplo
     }
 
     # 2. Process Resume
-    # Save file temporarily
     temp_path = f"data/resumes/{file.filename}"
     with open(temp_path, "wb") as f:
         f.write(await file.read())
@@ -91,7 +90,6 @@ async def screen_resume(job_id: str, candidate_name: str = Form(...), file: Uplo
     # 4. Save Ranking
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
-    # Save the full scoring_result as JSON to preserve the new fields (missing_skills, questions, etc.)
     c.execute("INSERT INTO rankings VALUES (?, ?, ?, ?)", 
               (job_id, candidate_name, scoring_result['overall_score'], json.dumps(scoring_result)))
     conn.commit()
@@ -105,8 +103,13 @@ async def screen_resume(job_id: str, candidate_name: str = Form(...), file: Uplo
         "missing_skills": scoring_result.get('missing_skills', []),
         "matched_skills": scoring_result.get('matched_skills', []),
         "found_soft_skills": scoring_result.get('found_soft_skills', []),
-        "interview_questions": scoring_result.get('interview_questions', [])
+        "interview_questions": scoring_result.get('interview_questions', []),
+        "agent_verdicts": scoring_result.get('agent_verdicts', {}),
+        "trajectory": scoring_result.get('trajectory', []),
+        "market_value": scoring_result.get('market_value', "N/A")
     }
+
+
 
 @app.get("/rankings/{job_id}")
 async def get_rankings(job_id: str):

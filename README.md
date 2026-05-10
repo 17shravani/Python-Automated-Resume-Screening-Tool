@@ -1,115 +1,46 @@
-# 💎 TalentFlow AI: Neural Resume Screening Ecosystem
+# 💎 NexusTalent Quantum AI | Elite Intelligence Ecosystem
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-009688.svg)](https://fastapi.tiangolo.com/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.28.2-FF4B4B.svg)](https://streamlit.io/)
-[![spaCy](https://img.shields.io/badge/spaCy-3.7.2-09A3D5.svg)](https://spacy.io/)
-
-**TalentFlow AI** is a production-grade, AI-powered resume screening tool designed to automate the initial recruitment funnel. It uses **Transformer-based Neural Embeddings** and **Named Entity Recognition (NER)** to rank candidates with high precision and explainable logic.
+NexusTalent is a production-grade, multi-agent AI platform designed to automate and elevate the recruitment process. It moves beyond keyword filtering to perform deep semantic analysis and career trajectory prediction.
 
 ---
 
-## 🚀 Key Features
-- **Neural Semantic Matching**: Uses `Sentence-Transformers` to understand context, not just keywords.
-- **Automated Entity Extraction**: Extracts Skills, Years of Experience, and Education level using `spaCy`.
-- **Hybrid Scoring Engine**: Combines Semantic Similarity (60%), Skill Coverage (30%), and Experience Match (10%).
-- **Multi-Format Ingestion**: Supports PDF, DOCX, and TXT files.
-- **SaaS-Style Dashboard**: A premium recruiter interface built with Streamlit and custom CSS.
-- **Explainable AI**: Provides a detailed breakdown of why a candidate was ranked high or low.
-- **Enterprise Ready**: Full FastAPI backend for external integrations.
+## 🌟 Core Features
+- **Neural Semantic Engine**: Uses state-of-the-art vector embeddings to match candidates based on intent and concepts, not just keywords.
+- **AI Decision Panel**: Features autonomous agents (Technical Oracle, Strategic Lead, and Culture Guardian) that provide independent verdicts on every candidate.
+- **Market Intel Hub**: Real-time leaderboards and competitive ranking of candidate pools.
+- **Career DNA**: Visualizes candidate career paths and market value using radar charts and trajectory mapping.
+- **Stealth Mode**: Includes an anonymizer toggle to mitigate unconscious bias during the screening process.
 
----
+## 🏗️ Technical Architecture
+The system is built using a modern decoupled architecture:
+- **FastAPI Backend**: A high-performance REST API handling NLP processing and data persistence.
+- **Streamlit Frontend**: A premium, CSS-injected UI with cyber-corporate glassmorphism aesthetics.
+- **Vector Search**: Semantic similarity scoring using `sentence-transformers`.
+- **Entity Extraction**: Industrial-strength NER (Named Entity Recognition) for skill and experience detection.
 
-## 🛠️ Tech Stack
-- **Backend**: Python, FastAPI, SQLite
-- **Intelligence Layer**: spaCy (NLP), Sentence-Transformers (all-MiniLM-L6-v2)
-- **Frontend**: Streamlit, Pandas
-- **Extraction**: pdfplumber, python-docx
-- **Fuzzy Logic**: RapidFuzz
+## 🚀 Quick Start
 
----
-
-## 📂 Project Structure
-```text
-TalentFlow-AI/
-├── src/
-│   ├── parser.py        # PDF/DOCX Extraction logic
-│   ├── extractor.py     # NLP Entity & Skill extraction
-│   └── scorer.py        # Neural Similarity & Weighted scoring
-├── app/
-│   ├── main.py          # FastAPI Backend (REST API)
-│   └── dashboard.py     # Premium Recruiter Dashboard (Streamlit)
-├── data/                # Sample data & uploads
-├── db/                  # SQLite persistence
-├── generate_samples.py  # Simulation script
-└── requirements.txt     # Dependency list
-```
-
----
-
-## ⚙️ Installation & Setup
-
-### 1. Clone & Setup Environment
-```bash
-git clone https://github.com/yourusername/TalentFlow-AI.git
-cd TalentFlow-AI
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-```
-
-### 2. Install Dependencies
+### 1. Installation
 ```bash
 pip install -r requirements.txt
-python -m spacy download en_core_web_sm
+python -m spacy download en_core_web_md
 ```
 
-### 3. Generate Simulation Data
+### 2. Launch Backend
 ```bash
-python generate_samples.py
+python -m uvicorn app.main:app --port 8088
 ```
 
----
-
-## 🏃 How to Run
-
-### Step 1: Start the Backend (API)
-Open a terminal and run:
+### 3. Launch Dashboard
 ```bash
-python app/main.py
+streamlit run app/dashboard.py --server.port 8588
 ```
-*The API will be available at `http://localhost:8000`*
 
-### Step 2: Start the Dashboard (UI)
-Open a **new** terminal and run:
-```bash
-streamlit run app/dashboard.py
-```
-*The Dashboard will open in your browser.*
+## 🧠 Learning Outcomes
+- **NLP Engineering**: Implementation of complex pipelines for text extraction and semantic scoring.
+- **Full-Stack Deployment**: Orchestrating multiple services with API-first design.
+- **UI/UX Design**: Creating high-end, interactive data visualizations for corporate environments.
+- **Agentic AI**: Developing multi-persona evaluation systems for objective decision-making.
 
 ---
-
-## 📊 Virtual Simulation Guide
-1. **Create Job**: Go to the "Create Job" tab. Use the generated `python_dev_jd.txt` as a reference.
-2. **Screen Resumes**: Upload the sample resumes from `data/resumes/`.
-3. **Analyze Results**: View the "Overall Match" and "Skill Breakdown".
-4. **Leaderboard**: Check the "Analytics" tab to see the ranked shortlist.
-
----
-
-## 🎓 Learning Outcomes
-- **NLP Pipeline**: Built an end-to-end NLP pipeline for text extraction and information retrieval.
-- **Vector Embeddings**: Implemented state-of-the-art neural embeddings for semantic search.
-- **Full-Stack ML**: Deployed a model through a production-ready API and UI.
-- **Software Engineering**: Applied modular architecture and clean code principles.
-
----
-
-## 🤝 Interview Preparation
-**Q: Why use Transformers instead of just keyword matching?**
-*A: Keywords fail to capture context. If a JD asks for "Backend" and a resume says "Server-side developer", keyword matching fails. Transformers understand that these concepts are semantically identical.*
-
-**Q: How do you handle bias in recruitment AI?**
-*A: TalentFlow AI focuses on Skills, Experience, and Education. We intentionally omit Personal Identifiable Information (PII) like age, gender, or race from the scoring algorithm to ensure merit-based ranking.*
-
----
-*Created for portfolio demonstration by [Your Name]*
+*Created by [17shravani](https://github.com/17shravani)*
