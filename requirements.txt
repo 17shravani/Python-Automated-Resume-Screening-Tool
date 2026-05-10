@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+spacy
+sentence-transformers
+streamlit
+pdfplumber
+python-docx
+pandas
+rapidfuzz
+pydantic
+python-multipart
+requests
+plotly

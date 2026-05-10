@@ -1,0 +1,14 @@
+
+    JANE SMITH
+    Data Analyst
+    
+    Skills: Python, SQL, Tableau, Excel, Communication.
+    
+    Experience:
+    Analyst | DataSolutions (2 years)
+    - Analyzed data using Python and SQL.
+    - Created dashboards in Tableau.
+    
+    Education:
+    Bachelor of Commerce
+    

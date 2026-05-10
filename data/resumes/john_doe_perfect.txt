@@ -1,0 +1,18 @@
+
+    JOHN DOE
+    Full Stack Python Developer
+    
+    Summary:
+    Innovative Software Engineer with 6 years of experience in Python, AWS, and SQL. 
+    Expertise in building scalable FastAPI backends and React frontends.
+    
+    Skills: Python, SQL, AWS, FastAPI, React, Docker, Kubernetes, Git.
+    
+    Experience:
+    Senior Developer | TechCorp (2018 - Present)
+    - Developed microservices using Python and FastAPI.
+    - Managed cloud infrastructure on AWS.
+    
+    Education:
+    Master of Science in Computer Science
+    

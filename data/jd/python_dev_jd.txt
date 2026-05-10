@@ -1,0 +1,12 @@
+
+    JOB TITLE: Senior Python Developer
+    
+    We are looking for a Senior Python Developer with 5+ years of experience.
+    The ideal candidate should be proficient in Python, SQL, and AWS.
+    Experience with FastAPI and Docker is a plus.
+    
+    Requirements:
+    - 5+ years of experience in Software Development.
+    - Strong knowledge of Python and SQL.
+    - Cloud experience with AWS.
+    
